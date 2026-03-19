@@ -1,59 +1,69 @@
-# FitvidaApp
+# FitVida Wellness Studio - Proyecto Angular Material
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Este es el proyecto de la Unidad 4 para el módulo **DAW M09**. Se ha desarrollado una landing page para un estudio de bienestar utilizando Angular y Angular Material.
 
-## Development server
+---
 
-To start a local development server, run:
+## Información del Alumno
+
+* **Nombre Completo:** Anqi
+* **Módulo:** DAW M09
+* **Unidad:** 4 — Angular & Material
+* **Fecha:** Marzo 2026
+
+---
+
+## Instrucciones de Ejecución
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Ejecutar el proyecto:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Abrir en el navegador:
+   http://localhost:4200
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Theming
 
-```bash
-ng generate component component-name
-```
+El proyecto utiliza un tema personalizado con Angular Material:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* **Primary:** Verde (#2E7D32) → mat.$green-palette
+* **Secondary:** Naranja (#FF8F00) → mat.$orange-palette
+* **Tipo:** Light Theme
 
-```bash
-ng generate --help
-```
+Se utiliza `mat.define-theme()` y `mat.get-theme-color()` para aplicar los colores en todos los componentes.
 
-## Building
+---
 
-To build the project run:
+## Componente personalizado
 
-```bash
-ng build
-```
+Se ha creado un componente llamado **hero-card** que:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Usa un `@mixin` en SCSS
+* Aplica colores del tema con `mat.get-theme-color()`
+* Está incluido en `styles.scss`
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Captura del proyecto
 
-```bash
-ng test
-```
+![Preview](./screenshot.png)
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Requisitos cumplidos
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Angular Material instalado
+* Tema personalizado (verde + naranja)
+* Navbar, Hero, Cards, Formulario y Footer
+* Componente personalizado con theming
+* Proyecto funciona con `ng serve`
