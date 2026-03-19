@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+
+// Define Mixin，Esto permite que el componente "lea" los colores del tema global.
+@mixin hero-card-theme($theme) {
+  .hero-card-container {
+    // Utiliza el color principal del tema.
+    background-color: mat.get-theme-color($theme, primary, 50);
+    border-left: 6px solid mat.get-theme-color($theme, primary, 700);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+
+    .hero-card__title {
+      // Utiliza el color principal 
+      color: mat.get-theme-color($theme, primary, 900);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .hero-card__action {
+      // Utilice el terciario definido previamente
+      background-color: mat.get-theme-color($theme, tertiary, 500);
+      color: white;
+      margin-top: 15px;
+    }
+  }
+}
