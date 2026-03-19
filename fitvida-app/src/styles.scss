@@ -5,12 +5,14 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 // 1. ¡Nueva función! Incluye un nuevo archivo de estilo de componente en la parte superior.
-@use './app/hero-card/hero-card.component' as hero;
+@use './app/hero-card/hero-card' as hero;
 
 $fitvida-theme: mat.define-theme((
   color: (
     theme-type: light,
     primary: mat.$green-palette,
+    /* He asignado el color secundario del cliente (#FF8F00) 
+    al espacio 'terciario' porque el secondary tiene error*/
     tertiary: mat.$orange-palette
   ),
   typography: (
@@ -23,7 +25,7 @@ $fitvida-theme: mat.define-theme((
 
 html {
   @include mat.all-component-themes($fitvida-theme);
-  
+
   // 2. Nueva función: Aplicar temas de componentes personalizados dentro de las etiquetas HTML.
   @include hero.hero-card-theme($fitvida-theme);
 }

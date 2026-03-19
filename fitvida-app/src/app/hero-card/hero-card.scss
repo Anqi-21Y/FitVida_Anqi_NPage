@@ -1,27 +1,78 @@
 @use '@angular/material' as mat;
 
-// Define Mixin，Esto permite que el componente "lea" los colores del tema global.
 @mixin hero-card-theme($theme) {
-  .hero-card-container {
-    // Utiliza el color principal del tema.
-    background-color: mat.get-theme-color($theme, primary, 50);
-    border-left: 6px solid mat.get-theme-color($theme, primary, 700);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
 
-    .hero-card__title {
-      // Utiliza el color principal 
-      color: mat.get-theme-color($theme, primary, 900);
-      font-size: 24px;
-      font-weight: bold;
+  .hero-card {
+    border-radius: 24px;
+    padding: 40px;
+    margin: 40px 0;
+
+    text-align: center;
+
+    /* PRO NOTE: 
+      I updated the hue numbers (e.g., from 700 to 40) to comply with 
+      the latest Angular Material M3 Design System requirements. 
+      In M3, hues are based on brightness (0-100) instead of the old 50-900 scale.
+      
+      - Primary 40: Main Brand Green (#2E7D32)
+      - Secondary 40: Vitality Orange (#FF8F00)
+    */
+
+    /* theme color primary */
+    background-color: mat.get-theme-color($theme, primary, 90);
+    border-left: 4px solid mat.get-theme-color($theme, primary, 40);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
+  }
 
-    .hero-card__action {
-      // Utilice el terciario definido previamente
-      background-color: mat.get-theme-color($theme, tertiary, 500);
-      color: white;
-      margin-top: 15px;
+  .hero-card__content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-card__badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+
+    background-color: mat.get-theme-color($theme, primary, 80);
+    color: mat.get-theme-color($theme, primary, 20);
+  }
+
+  .hero-card__title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+
+    color: mat.get-theme-color($theme, primary, 10);
+  }
+
+  .hero-card__text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .hero-card__action {
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+
+    /* secondary/tertiary */
+    background-color: mat.get-theme-color($theme, secondary, 40);
+    color: white;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }
