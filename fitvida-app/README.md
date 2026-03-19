@@ -6,7 +6,7 @@ Este es el proyecto de la Unidad 4 para el módulo **DAW M09**. Se ha desarrolla
 
 ## Información del Alumno
 
-* **Nombre Completo:** Anqi
+* **Nombre Completo:** Anqi Yang
 * **Módulo:** DAW M09
 * **Unidad:** 4 — Angular & Material
 * **Fecha:** Marzo 2026
